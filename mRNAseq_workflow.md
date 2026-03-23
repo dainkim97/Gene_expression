@@ -21,7 +21,9 @@ Bioinformatics of gene expression
   1. Normal version
   2. Normalized based on TPM
      Cut off ->
-     awk '$2 > 1.5 {print $1}' contig_TPM_sum.txt > keep_contigs_tpm1.5.txt #filename: contig_TPM_sum.txt 
+     awk '$2 > 1.5 {print $1}' contig_TPM_sum.txt > keep_contigs_tpm1.5.txt #filename: contig_TPM_sum.txt #filtering file name
+     On HPC filtering: awk 'NR==FNR {keep[$1]; next} FNR==1 || ($1 in keep)' keep_contigs_tpm1.txt supertranscript_nozero.matrix.tsv > supertranscript_counts.filtered_tpm1.matrix
+
 
 - Annotation (Entap)
   link: https://entap.readthedocs.io/en/latest/Getting_Started/ini_files.html
