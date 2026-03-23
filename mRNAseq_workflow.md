@@ -7,7 +7,7 @@ Bioinformatics of gene expression
 - Annotation (Entap)
 
 
-# De novo seq work flow
+# De novo seq workflow
 - Assembly (Trinity)
 
 - QC (BUSCO and Bowtie)
