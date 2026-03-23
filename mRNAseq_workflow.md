@@ -20,9 +20,9 @@ Bioinformatics of gene expression
   link: https://salmon.readthedocs.io/en/latest/salmon.html
   1. Normal version
   2. Normalized based on TPM
-     Cut off ->
-     awk '$2 > 1.5 {print $1}' contig_TPM_sum.txt > keep_contigs_tpm1.5.txt #filename: contig_TPM_sum.txt #filtering file name
-     On HPC filtering: awk 'NR==FNR {keep[$1]; next} FNR==1 || ($1 in keep)' keep_contigs_tpm1.txt supertranscript_nozero.matrix.tsv > supertranscript_counts.filtered_tpm1.matrix
+     HPC TPM sum -> (R) visualization to decide cut-off range -> (HPC) extract contigs name -> (HPC) Filtering
+     (HPC) extract contigs name : awk '$2 > 1.5 {print $1}' contig_TPM_sum.txt > keep_contigs_tpm1.5.txt #filename: contig_TPM_sum.txt #filtering file name
+     (HPC) Filtering: awk 'NR==FNR {keep[$1]; next} FNR==1 || ($1 in keep)' keep_contigs_tpm1.txt supertranscript_nozero.matrix.tsv > supertranscript_counts.filtered_tpm1.matrix
 
 
 - Annotation (Entap)
